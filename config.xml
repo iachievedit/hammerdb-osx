@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hammerdb>
+ <rdbms>MySQL</rdbms>
+    <bm>TPC-C</bm>
+<mysql>
+    <connection>
+        <mysql_host>127.0.0.1</mysql_host>
+        <mysql_port>3306</mysql_port>
+    </connection>
+	<tpcc>
+        <schema>
+            <my_count_ware>1</my_count_ware>
+            <mysql_num_threads>1</mysql_num_threads>
+            <mysql_user>root</mysql_user>
+            <mysql_pass>mysql</mysql_pass>
+            <mysql_dbase>tpcc</mysql_dbase>
+            <storage_engine>innodb</storage_engine>
+	    <mysql_partition>false</mysql_partition>
+        </schema>
+        <driver>
+            <my_total_iterations>1000000</my_total_iterations>
+            <my_raiseerror>false</my_raiseerror>
+            <my_keyandthink>false</my_keyandthink>
+            <mysqldriver>standard</mysqldriver>
+	    <my_rampup>2</my_rampup>
+            <my_duration>5</my_duration>
+        </driver>
+    </tpcc>
+    <tpch>
+        <schema>
+            <mysql_scale_fact>1</mysql_scale_fact>
+            <mysql_tpch_user>root</mysql_tpch_user>
+            <mysql_tpch_pass>mysql</mysql_tpch_pass>
+            <mysql_tpch_dbase>tpch</mysql_tpch_dbase>
+            <mysql_num_tpch_threads>1</mysql_num_tpch_threads>
+  	    <mysql_tpch_storage_engine>myisam</mysql_tpch_storage_engine>
+        </schema>
+        <driver>
+            <mysql_total_querysets>1</mysql_total_querysets>
+            <mysql_raise_query_error>false</mysql_raise_query_error>
+            <mysql_verbose>false</mysql_verbose>
+            <mysql_refresh_on>false</mysql_refresh_on>
+            <mysql_update_sets>1</mysql_update_sets>
+            <mysql_trickle_refresh>1000</mysql_trickle_refresh>
+            <mysql_refresh_verbose>false</mysql_refresh_verbose>
+        </driver>
+    </tpch>
+</mysql>
+  <virtual_user_options>
+        <virtual_users>1</virtual_users>
+        <user_delay>500</user_delay>
+        <repeat_delay>500</repeat_delay>
+        <iterations>1</iterations>
+        <show_output>0</show_output>
+        <log_to_temp>0</log_to_temp>
+	<unique_log_name>0</unique_log_name>
+	<no_log_buffer>0</no_log_buffer>
+    </virtual_user_options>
+    <mode>
+	<autopilot_options>
+	    <apmode>disabled</apmode>
+	    <autopilot_duration>10</autopilot_duration>
+	    <autopilot_sequence>2 3 5 9 13 17 21 25</autopilot_sequence>
+	</autopilot_options>
+        <slave_options>
+            <hostname>localhost</hostname>
+            <id>0</id>
+        </slave_options>
+    </mode>
+</hammerdb>
